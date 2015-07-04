@@ -17,8 +17,6 @@
 # along with Wirecloud.  If not, see <http://www.gnu.org/licenses/>.
 
 
-from __future__ import unicode_literals
-
 from django.conf import settings
 from django.db import connection
 from south.v2 import DataMigration
