@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Copyright (c) 2014 CoNWeT Lab., Universidad Politécnica de Madrid
+# Copyright (c) 2014-2015 CoNWeT Lab., Universidad Politécnica de Madrid
 
 # This file is part of Wirecloud.
 
@@ -16,6 +16,8 @@
 
 # You should have received a copy of the GNU Affero General Public License
 # along with Wirecloud.  If not, see <http://www.gnu.org/licenses/>.
+
+from __future__ import unicode_literals
 
 import io
 import os
@@ -67,8 +69,6 @@ class ResetSearchIndexesCommandTestCase(TestCase):
 
         self.options['stdout'].seek(0)
         self.assertEqual(self.options['stdout'].read(), '')
-        self.options['stderr'].seek(0)
-        self.assertEqual(self.options['stderr'].read(), '')
         self.assertFalse(os.path.exists(self.inexistent_index_dir))
 
     def test_resetsearchindexes_command_existing_dir(self, getdefaultlocale_mock):

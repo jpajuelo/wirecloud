@@ -104,10 +104,14 @@ class WorkspaceCacheTestCase(CacheTestCase):
         super(WorkspaceCacheTestCase, self).setUp()
 
         self.user = User.objects.get(username='test')
-        self.workspace = Workspace.objects.get(pk=1)
 
         # Fill cache
         self.initial_info = get_global_workspace_data(self.workspace, self.user)
+
+    @property
+    def workspace(self):
+        # Django 1.4 doesn't refresh self.workspace
+        return Workspace.objects.get(pk=1)
 
     def test_workspace_data_is_cached(self):
         workspace_info = get_global_workspace_data(self.workspace, self.user)

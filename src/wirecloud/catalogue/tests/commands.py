@@ -17,8 +17,10 @@
 # You should have received a copy of the GNU Affero General Public License
 # along with Wirecloud.  If not, see <http://www.gnu.org/licenses/>.
 
-import io
+from __future__ import unicode_literals
+
 import os
+import six
 import shutil
 from tempfile import mkdtemp
 
@@ -42,7 +44,7 @@ class AddToCatalogueCommandTestCase(TestCase):
 
     def setUp(self):
 
-        self.options = {"stdout": io.BytesIO(), "stderr": io.BytesIO()}
+        self.options = {"stdout": six.StringIO(), "stderr": six.StringIO()}
 
     def test_addtocatalogue_command_no_args(self, getdefaultlocale_mock):
 
@@ -53,8 +55,6 @@ class AddToCatalogueCommandTestCase(TestCase):
 
         self.options['stdout'].seek(0)
         self.assertEqual(self.options['stdout'].read(), '')
-        self.options['stderr'].seek(0)
-        self.assertEqual(self.options['stderr'].read(), '')
 
     def test_addtocatalogue_command_simplewgt_user(self, getdefaultlocale_mock):
 
@@ -169,8 +169,6 @@ class AddToCatalogueCommandTestCase(TestCase):
 
         self.options['stdout'].seek(0)
         self.assertEqual(self.options['stdout'].read(), '')
-        self.options['stderr'].seek(0)
-        self.assertEqual(self.options['stderr'].read(), '')
 
     def test_addtocatalogue_command_deploy_only(self, getdefaultlocale_mock):
 

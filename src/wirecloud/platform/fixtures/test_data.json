@@ -81,7 +81,8 @@
         "fields": {
             "workspace": "1",
             "name": "tab",
-            "visible": true
+            "visible": true,
+            "position": 0
         }
     },
     {
