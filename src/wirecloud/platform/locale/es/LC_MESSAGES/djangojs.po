@@ -1814,7 +1814,7 @@ msgstr "Registros del Wiring"
 
 #: static/js/wirecloud/wiring/OperatorLogManager.js:41
 msgid "%(ioperator_title)s's logs"
-msgstr "Registros de %(ioperator_title)"
+msgstr "Registros de %(ioperator_title)s"
 
 #: static/js/wirecloud/wiring/OperatorTargetEndpoint.js:67
 #: static/js/wirecloud/wiring/WidgetTargetEndpoint.js:69
