@@ -4,7 +4,6 @@
     <email>test@example.com</email>
     <image>images/catalogue.png</image>
     <description>Test operator description</description>
-    <doc>doc/index.html</doc>
     <authors>admin</authors>
   </details>
   <preferences>
