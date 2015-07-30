@@ -1676,9 +1676,8 @@ class EndpointOrderTestCase(WirecloudSeleniumTestCase):
 
             ActionChains(self.driver).click_and_hold(output1.label).move_by_offset(0, 50).move_by_offset(0, 50).release().perform()
             ActionChains(self.driver).click_and_hold(input3.label).move_by_offset(0, -50).move_by_offset(0, -50).release().perform()
-            time.sleep(0.2)
 
-            self.assertEqual(output1.pos, 2)
+            WebDriverWait(self.driver, timeout=2).until(lambda driver: output1.pos == 2)
             self.assertEqual(input3.pos, 0)
 
         # Reload the wiring view
@@ -1718,9 +1717,8 @@ class EndpointOrderTestCase(WirecloudSeleniumTestCase):
 
             ActionChains(self.driver).click_and_hold(output1.label).move_by_offset(0, 50).move_by_offset(0, 50).release().perform()
             ActionChains(self.driver).click_and_hold(input3.label).move_by_offset(0, -50).move_by_offset(0, -50).release().perform()
-            time.sleep(0.2)
 
-            self.assertEqual(output1.pos, 2)
+            WebDriverWait(self.driver, timeout=2).until(lambda driver: output1.pos == 2)
             self.assertEqual(input3.pos, 0)
 
         # Reload the wiring view
