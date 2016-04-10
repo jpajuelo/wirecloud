@@ -142,6 +142,15 @@ module.exports = function (grunt) {
             }
         },
 
+        jsdoc : {
+            dist : {
+                src: styledElementsFiles,
+                options: {
+                    destination: 'js_docs'
+                }
+            }
+        },
+
         jshint: {
             options: {
                 jshintrc: true
@@ -164,6 +173,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-jasmine');
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks("grunt-jscs");
+    grunt.loadNpmTasks('grunt-jsdoc');
 
     grunt.registerTask('test', [
         'jshint',

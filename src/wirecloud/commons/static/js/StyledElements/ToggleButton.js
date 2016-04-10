@@ -1,5 +1,5 @@
 /*
- *     Copyright (c) 2012-2015 CoNWeT Lab., Universidad Politécnica de Madrid
+ *     Copyright (c) 2012-2016 CoNWeT Lab., Universidad Politécnica de Madrid
  *
  *     This file is part of Wirecloud Platform.
  *
@@ -21,22 +21,29 @@
 
 /*globals StyledElements */
 
-(function () {
+
+(function (se, utils) {
 
     "use strict";
 
-    StyledElements.ToggleButton = function ToggleButton(options) {
-        var defaultOptions = {
-            'initiallyChecked': false
-        };
-        options = StyledElements.Utils.merge(defaultOptions, options);
+    // ==================================================================================
+    // CLASS DEFINITION
+    // ==================================================================================
 
-        // Support hirerarchy
-        if (options.extending) {
-            return;
-        }
-
-        StyledElements.Button.call(this, options);
+    /**
+     * Creates a new instance of class ToggleButton.
+     * @name StyledElements.ToggleButton
+     * @since 0.5
+     *
+     * @constructor
+     * @extends {StyledElements.Button}
+     *
+     * @param {Object} [options]
+     * @property {Boolean} [options.initiallyChecked=false]
+     */
+    se.ToggleButton = function ToggleButton(options) {
+        this.superClass(options);
+        options = utils.merge(utils.clone(defaults), options);
 
         if (options.checkedIcon == null) {
             options.checkedIcon = options.icon;
@@ -52,24 +59,73 @@
         this._text = options.text;
         this._checkedText = options.checkedText;
 
-        Object.defineProperty(this, 'active', {
-            get: function get() {
-                return this.hasClassName('active');
-            },
-            set: function set(value) {
-                this.toggleClassName('active', value)
-                    ._onactive(value);
+        // define properties
+
+        var _active = false;
+
+        Object.defineProperties(this, {
+            /**
+             * @memberof StyledElements.ToggleButton#
+             * @since 0.5
+             *
+             * @type {!Boolean}
+             */
+            active: {
+                get: function get() {
+                    return _active;
+                },
+                set: function set(active) {
+                    _active = set_active.call(this, _active, !!active);
+                }
             }
         });
 
-        // Init status
+        // set up properties
+
         this.active = options.initiallyChecked;
     };
-    StyledElements.ToggleButton.prototype = new StyledElements.Button({extending: true});
 
-    StyledElements.ToggleButton.prototype._onactive = function _onactive(active) {
+    // ==================================================================================
+    // PUBLIC MEMBERS
+    // ==================================================================================
 
-        if (this.active !== active) {
+    utils.inherit(se.ToggleButton, se.Button, /** @lends StyledElements.ToggleButton.prototype */{
+
+        _clickCallback: function _clickCallback(event) {
+            event.stopPropagation();
+            this.click();
+        },
+
+        /**
+         * @returns {StyledElements.ToggleButton}
+         *     The instance on which the member is called.
+         */
+        click: function click() {
+
+            if (this.enabled) {
+                this.active = !this.active;
+                this.trigger('click');
+            }
+
+            return this;
+        }
+
+    });
+
+    // ==================================================================================
+    // PRIVATE MEMBERS
+    // ==================================================================================
+
+    var defaults = {
+        initiallyChecked: false
+    };
+
+    var set_active = function set_active(active, newActive) {
+
+        if (active !== newActive) {
+            active = newActive;
+            this.toggleClassName('active', active);
+
             if (this.icon) {
                 this.icon.src = active ? this._checkedIcon : this._icon;
             }
@@ -79,22 +135,7 @@
             }
         }
 
-        return this;
+        return active;
     };
 
-    StyledElements.ToggleButton.prototype._clickCallback = function _clickCallback(event) {
-        event.stopPropagation();
-        this.click();
-    };
-
-    StyledElements.ToggleButton.prototype.click = function click() {
-
-        if (this.enabled) {
-            this.active = !this.active;
-            this.trigger('click');
-        }
-
-        return this;
-    };
-
-})();
+})(StyledElements, StyledElements.Utils);

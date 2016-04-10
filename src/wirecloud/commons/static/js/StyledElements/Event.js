@@ -77,6 +77,11 @@
         this.off(handler);
     };
 
+    Event.prototype.clear = function clear() {
+        this.handlers.length = 0;
+        return this;
+    };
+
     Event.prototype.clearEventListeners = function clearEventListeners() {
         this.off();
     };

@@ -21,7 +21,7 @@
 
 /*global StyledElements*/
 
-(function () {
+(function (se, utils) {
 
     "use strict";
 
@@ -42,7 +42,7 @@
     /**
      * Añade un campo de texto.
      */
-    PasswordField = function PasswordField(options) {
+    se.PasswordField = function PasswordField(options) {
         var defaultOptions = {
             'initialValue': '',
             'class': ''
@@ -98,4 +98,4 @@
 
     StyledElements.PasswordField = PasswordField;
 
-})();
+})(StyledElements, StyledElements.Utils);

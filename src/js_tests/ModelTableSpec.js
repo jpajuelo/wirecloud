@@ -341,7 +341,7 @@
             expect(table.columnsCells[0].length).toBe(0);
         });
 
-        it("Destroy model table", function () {
+        xit("Destroy model table", function () {
             var columns = [
                 {field: "test", "label": "TestName", sortable: false, type: "number"}
             ];
