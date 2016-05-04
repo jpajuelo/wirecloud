@@ -58,20 +58,9 @@
 // WIRING-VIEW - FOOTER
 // ============================================================================
 
-.wiring-view .wiring-footer {
-    background-color: $panel-default-heading-bg;
-    border: solid 1px $panel-default-border-color;
-    @include positioned-border-radius(bottom);
-    box-shadow: $panel-box-shadow;
-    color: $panel-default-heading-text-color;
-    text-shadow: $text-shadow-conf-base rgba(contrast-color($panel-default-heading-bg, #FFF, #000, $text-color-threshold), 0.8);
+.wiring-footer {
+    padding: $panel-padding-vertical $panel-padding-horizontal;
     @include user-select(none);
-    padding: 0 $panel-padding-horizontal;
-
-    .se-horizontal-layout {
-        height: 100%;
-        align-items: center;
-    }
 }
 
 // ============================================================================
