@@ -1,16 +1,11 @@
-@import 'wiring/defaults';
-@import 'utils';
 @import "compass/css3/user-interface";
 @import "variables";
 
-// ============================================================================
-// WIRING-VIEW - DIAGRAM
-// ============================================================================
 
-.wiring-view .wiring-diagram {
-    background-color: $wiring-diagram-bg-color;
+.wiring-diagram {
+    background-color: $wiring-content-bg;
     border: solid 1px $panel-default-border-color;
-    box-shadow: $panel-box-shadow-inset;
+    border-radius: $border-radius-base;
 
     .alert {
         width: 500px;
@@ -22,10 +17,6 @@
         height: 100%;
     }
 }
-
-// ============================================================================
-// WIRING SIDEBAR - PANEL
-// ============================================================================
 
 .we-panel-components {
 
@@ -54,30 +45,7 @@
     }
 }
 
-// ============================================================================
-// WIRING-VIEW - FOOTER
-// ============================================================================
-
 .wiring-footer {
     padding: $panel-padding-vertical $panel-padding-horizontal;
     @include user-select(none);
-}
-
-// ============================================================================
-// WIRING LEGEND - LABELS
-// ============================================================================
-
-.label-connection {
-    color: $text-color-dark;
-    background-color: $connection-bg;
-}
-
-.label-operator {
-    color: $text-color-dark;
-    background-color: $component-operator-bg;
-}
-
-.label-widget {
-    color: $text-color-dark;
-    background-color: $component-widget-bg;
 }
