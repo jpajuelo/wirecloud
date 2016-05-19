@@ -1,6 +1,5 @@
-@import 'wiring/defaults';
-@import 'compass/css3/user-interface';
-@import "utils";
+@import "compass/css3/user-interface";
+@import "variables";
 
 
 // ======================================================================================
@@ -12,11 +11,8 @@
     @include user-select(none);
 
     .behaviour-description {
-        max-height: $behaviour-description-maxheight;
-        margin-bottom: 0px;
-        font-size: $font-size-h6;
-        line-height: $line-height-base;
-        color: $behaviour-description-font-color;
+        margin-bottom: 0;
+        max-height: $wiring-description-maxheight;
         overflow: hidden;
     }
 }

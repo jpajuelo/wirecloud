@@ -80,7 +80,7 @@
             this.heading.title.addClassName("se-link behaviour-title text-truncate");
 
             descriptionElement = document.createElement('p');
-            descriptionElement.className = "behaviour-description";
+            descriptionElement.className = "behaviour-description text-muted";
             descriptionElement.textContent = options.description;
             this.body.appendChild(descriptionElement);
 

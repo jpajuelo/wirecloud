@@ -77,11 +77,3 @@ $endpoint-orderable-active-bg:         #f9f9f9 !default;
 $endpoint-orderable-active-text-color: transparentize($endpoint-text-color, 0.3) !default;
 
 $endpoint-cloned-z-index: ($component-z-index / 2) * 4 !default;
-
-// ============================================================================
-// WIRING VIEW - BEHAVIOURS
-// ============================================================================
-
-$behaviour-description-maxheight: ($line-height-base * 5) !default;
-$behaviour-description-font-color: rgb(70, 80, 90) !default;
-$behaviour-title-width: 75%;

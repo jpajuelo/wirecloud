@@ -24,6 +24,11 @@
     }
 }
 
+.we-component-meta-description {
+    max-height: $wiring-description-maxheight;
+    overflow: hidden;
+}
+
 .we-component-group {
 
     .we-component {

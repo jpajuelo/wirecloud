@@ -321,7 +321,8 @@ $brand-widget:     #F0AA46 !default;
 // WIRING - EDITOR VIEW
 // ======================================================================================
 
-$wiring-content-bg: darken($brand-default, 1%) !default;
+$wiring-description-maxheight: ($line-height-base * 4) !default;
+$wiring-content-bg:            darken($brand-default, 1%) !default;
 
 // ======================================================================================
 // WIRING - CONNECTIONS
@@ -334,3 +335,9 @@ $connection-temporal-bg:   transparentize(#C5CAE9, 0.1) !default;
 
 $connection-missing-bg:            transparentize(#E57373, 0.1) !default;
 $connection-missing-background-bg: transparentize(#FFEBEE, 0.1) !default;
+
+// ======================================================================================
+// WIRING - BEHAVIOURS
+// ======================================================================================
+
+$behaviour-title-width: 75% !default;

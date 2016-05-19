@@ -56,7 +56,7 @@
         }.bind(this));
 
         this.descriptionElement = document.createElement('div');
-        this.descriptionElement.className = "text-muted";
+        this.descriptionElement.className = "we-component-meta-description text-muted";
 
         this.wrapperElement = (new se.GUIBuilder()).parse(Wirecloud.currentTheme.templates.component_group, {
             title: this.titleElement,
