@@ -40,9 +40,11 @@
         this.imageElement = document.createElement('img');
         this.imageElement.onerror = image_onerror.bind(this);
 
-        var version = new se.Select();
+        var version = new se.Select({
+            initialValue: resource.version,
+            initialEntries: orderVersions([resource.version].concat(resource.others))
+        });
         version.addEventListener('change', version_onchange.bind(this));
-        version.addEntries([resource.version].concat(resource.others));
 
         var button = new se.Button({
             class: 'btn-create',
@@ -125,6 +127,23 @@
         /* jshint validthis: true */
         this.imageElement.parentElement.classList.add('se-thumbnail-missing');
         this.imageElement.parentElement.appendChild(document.createTextNode(utils.gettext("No image available")));
+    };
+
+    var orderVersions = function orderVersions(versions) {
+        versions = versions.map(function (value) {
+            return new Wirecloud.Version(value);
+        }).sort(function (version1, version2) {
+            return version1.compareTo(version2);
+        }).map(function (version) {
+            return {
+                label: 'v' + version.text,
+                value: version.text
+            };
+        });
+
+        versions[versions.length - 1].label += ' ' + utils.gettext("(latest)");
+
+        return versions.reverse();
     };
 
 })(Wirecloud.ui.WiringEditor, StyledElements, StyledElements.Utils);
