@@ -944,6 +944,87 @@ if (window.StyledElements == null) {
     };
 
     // ==================================================================================
+    // Element helpers
+    // ==================================================================================
+
+    var cleanClassName = function cleanClassName(className) {
+        return className == null ? "" : className.toString().trim();
+    };
+
+    var splitClassName = function splitClassName(className) {
+
+        if (Array.isArray(className)) {
+            return className;
+        }
+
+        return (className = cleanClassName(className)).length ? className.split(/\s+/) : [];
+    };
+
+    /**
+     * @since 0.7
+     *
+     * @param {Element} element
+     * @param {(String|String[])} classList
+     */
+    Utils.addClassList = function addClassList(element, classList) {
+        splitClassName(classList).forEach(function (classValue) {
+            element.classList.add(classValue);
+        });
+    };
+
+    /**
+     * @since 0.7
+     *
+     * @param {Element} element
+     * @param {String} classValue
+     */
+    Utils.containsClass = function containsClass(element, classValue) {
+        return element.classList.contains(cleanClassName(classValue));
+    };
+
+    /**
+     * @since 0.7
+     *
+     * @param {Element} element
+     * @param {(String|String[])} classList
+     */
+    Utils.removeClassList = function removeClassList(element, classList) {
+        classList = splitClassName(classList);
+
+        if (classList.length) {
+            classList.forEach(function (classValue) {
+                element.classList.remove(classValue);
+            });
+        } else {
+            element.removeAttribute('class');
+        }
+    };
+
+    /**
+     * @since 0.7
+     *
+     * @param {Element} element
+     * @param {(String|String[])} classList
+     */
+    Utils.replaceClassList = function replaceClassList(element, classListToRemove, classListToAdd) {
+        Utils.removeClassList(element, classListToRemove);
+        Utils.addClassList(element, classListToAdd);
+    };
+
+    /**
+     * @since 0.7
+     *
+     * @param {Element} element
+     * @param {(String|String[])} classList
+     * @param {Boolean} [state]
+     */
+    Utils.toggleClassList = function toggleClassList(element, classList, state) {
+        splitClassName(classList).forEach(function (classValue) {
+            element.classList.toggle(classValue, state);
+        });
+    };
+
+    // ==================================================================================
     // Node helpers
     // ==================================================================================
 

@@ -105,17 +105,7 @@
              *      The instance on which the member is called.
              */
             addClassName: function addClassName(classList) {
-
-                if (!Array.isArray(classList)) {
-                    classList = classList == null ? "" : classList.toString().trim();
-                    if (classList === "") {
-                        return;
-                    }
-                    classList = classList.split(/\s+/);
-                }
-
-                classList.forEach(add_individual_class, this);
-
+                utils.addClassList(this.wrapperElement, classList);
                 return this;
             },
 
@@ -268,9 +258,7 @@
              *      The instance on which the member is called.
              */
             replaceClassName: function replaceClassName(removeList, addList) {
-                this.removeClassName(removeList);
-                this.addClassName(addList);
-
+                utils.replaceClassList(this.wrapperElement, removeList, addList);
                 return this;
             },
 
@@ -336,26 +324,7 @@
              *      The instance on which the member is called.
              */
             toggleClassName: function toggleClassName(classList, state) {
-                classList = typeof classList !== 'string' ? "" : classList.trim();
-
-                if (classList.length) {
-                    if (typeof state !== 'boolean') {
-                        classList.split(/\s+/).forEach(function (className) {
-                            if (this.get().classList.contains(className)) {
-                                this.get().classList.remove(className);
-                            } else {
-                                this.get().classList.add(className);
-                            }
-                        }, this);
-                    } else {
-                        var method = state ? "add" : "remove";
-
-                        classList.split(/\s+/).forEach(function (className) {
-                            this.get().classList[method](className);
-                        }, this);
-                    }
-                }
-
+                utils.toggleClassList(this.wrapperElement, classList, state);
                 return this;
             },
 
@@ -417,9 +386,7 @@
              * `className`, otherwise `false`
              */
             hasClassName: function hasClassName(className) {
-                className = className == null ? "" : className.toString().trim();
-
-                return this.get().classList.contains(className);
+                return utils.containsClass(this.wrapperElement, className);
             },
 
             /**
@@ -450,16 +417,7 @@
              *      The instance on which the member is called.
              */
             removeClassName: function removeClassName(classList) {
-                if (!Array.isArray(classList)) {
-                    classList = classList == null ? "" : classList.toString().trim();
-                    if (classList === "") {
-                        this.get().removeAttribute('class');
-                    }
-                    classList = classList.split(/\s+/);
-                }
-
-                classList.forEach(remove_individual_class, this);
-
+                utils.removeClassList(this.wrapperElement, classList);
                 return this;
             },
 
@@ -493,13 +451,5 @@
     // ==================================================================================
     // PRIVATE MEMBERS
     // ==================================================================================
-
-    var add_individual_class = function (className) {
-        this.get().classList.add(className);
-    };
-
-    var remove_individual_class = function (className) {
-        this.get().classList.remove(className);
-    };
 
 })(StyledElements, StyledElements.Utils);

@@ -295,31 +295,17 @@
     };
 
     Button.prototype.addIconClassName = function addIconClassName(classList) {
-        if (!Array.isArray(classList)) {
-            classList = classList == null ? "" : classList.toString().trim();
-            if (classList === "") {
-                return this;
-            }
-            classList = classList.split(/\s+/);
-        }
-
-        classList.forEach(function (classname) {
-            this.icon.classList.add(classname);
-        }, this);
-
+        utils.addClassList(this.icon, classList);
         return this;
     };
 
-    Button.prototype.removeIconClassName = function removeIconClassName(classname) {
-        this.icon.classList.remove(classname);
-
+    Button.prototype.removeIconClassName = function removeIconClassName(classList) {
+        utils.removeClassList(this.icon, classList);
         return this;
     };
 
-    Button.prototype.replaceIconClass = function replaceIconClass(className, newClassName) {
-        this.icon.classList.remove(className);
-        this.icon.classList.add(newClassName);
-
+    Button.prototype.replaceIconClass = function replaceIconClass(removeClassList, addClassList) {
+        utils.replaceClassList(this.icon, removeClassList, addClassList);
         return this;
     };
 
