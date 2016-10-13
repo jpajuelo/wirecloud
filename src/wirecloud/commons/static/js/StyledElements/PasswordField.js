@@ -41,7 +41,16 @@
     };
 
     /**
-     * Añade un campo de texto.
+     * Create a new instance of class `PasswordField`.
+     *
+     * @name StyledElements.PasswordField
+     * @constructor
+     * @extends StyledElements.Button
+     * @since 0.5
+     *
+     * @param {Object} [options] The available options are:
+     * @param {String} [options.class=""]
+     * @param {String} [options.initialValue=""]
      */
     PasswordField = function PasswordField(options) {
         var defaultOptions = {

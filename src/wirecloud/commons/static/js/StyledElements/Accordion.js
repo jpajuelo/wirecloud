@@ -1,5 +1,5 @@
 /*
- *     Copyright (c) 2012-2015 CoNWeT Lab., Universidad Politécnica de Madrid
+ *     Copyright (c) 2012-2016 CoNWeT Lab., Universidad Politécnica de Madrid
  *
  *     This file is part of Wirecloud Platform.
  *
@@ -26,6 +26,19 @@
 
     "use strict";
 
+    /**
+     * Create a new instance of class `Accordion`.
+     *
+     * @name StyledElements.Accordion
+     * @constructor
+     * @extends StyledElements.StyledElement
+     * @since 0.5
+     *
+     * @param {Object} [options] The available options are:
+     * @param {String} [options.class=""]
+     * @param {Boolean} [options.full=true]
+     * @param {Boolean} [options.exclusive=true]
+     */
     var Accordion = function Accordion(options) {
         var defaultOptions = {
             'class': '',

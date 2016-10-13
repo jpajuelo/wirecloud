@@ -31,13 +31,15 @@
      * contents to share the same placement, being only one of the configured
      * {@link StyledElements.Alternative} able to be displayed at one time.
      *
+     * @name StyledElements.Alternatives
      * @constructor
      * @extends StyledElements.StyledElement
-     * @name StyledElements.Alternatives
      * @since 0.5
      *
-     * @param {Object.<String, *>} options
-     *    Available options:
+     * @param {Object} [options] The available options are:
+     * @param {String} [options.class=""]
+     * @param {Boolean} [options.full=true]
+     * @param {String} [options.defaultEffect="none"]
      */
     var Alternatives = function Alternatives(options) {
         var defaultOptions = {

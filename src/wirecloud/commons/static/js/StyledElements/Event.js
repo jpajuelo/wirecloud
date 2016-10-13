@@ -31,7 +31,14 @@
     // =========================================================================
 
     /**
-     * This class manages the callbacks of the <code>StyledElement</code>s' events.
+     * Create a new instance of class `Event`. This class manages the callbacks
+     * of the <code>StyledElement</code>s' events.
+     *
+     * @name StyledElements.Event
+     * @constructor
+     * @since 0.5
+     *
+     * @param {Object} context
      */
     var Event = function Event(context) {
         Object.defineProperties(this, {

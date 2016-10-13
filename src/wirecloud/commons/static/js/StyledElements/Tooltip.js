@@ -132,6 +132,19 @@
         return this;
     };
 
+    /**
+     * Create a new instance of class `Tooltip`.
+     *
+     * @name StyledElements.Tooltip
+     * @constructor
+     * @extends StyledElements.StyledElement
+     * @since 0.5
+     *
+     * @param {Object} [options] The available options are:
+     * @param {String} [options.class=""]
+     * @param {String} [options.content=""]
+     * @param {Array.<String>} [options.placement=["right", "bottom", "left", "top"]]
+     */
     var Tooltip = function Tooltip(options) {
         var defaultOptions = {
             'content': '',

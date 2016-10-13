@@ -45,12 +45,17 @@
     };
 
     /**
+     * Create a new instance of class `Select`.
      *
-     * Options:
-     *     * initialEntries:
-     *     * initialValue:
-     *     * idFunc: In case you want to assign non-string values, you must provide
-     *     a function for converting them into strings.
+     * @name StyledElements.Select
+     * @constructor
+     * @extends StyledElements.InputElement
+     * @since 0.5
+     *
+     * @param {Object} [options] The available options are:
+     * @param {String} [options.class=""]
+     * @param {String} [options.initialValue=""]
+     * @param {Array.<String>} [options.initialEntries=[]]
      */
     Select = function Select(options) {
         options = utils.merge({

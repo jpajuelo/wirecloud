@@ -26,6 +26,17 @@
 
     "use strict";
 
+    /**
+     * Create a new instance of class `ToggleButton`.
+     *
+     * @name StyledElements.ToggleButton
+     * @constructor
+     * @extends StyledElements.Button
+     * @since 0.5
+     *
+     * @param {Object} [options] The available options are:
+     * @param {Boolean} [options.initiallyChecked=false]
+     */
     StyledElements.ToggleButton = function ToggleButton(options) {
         var defaultOptions = {
             'initiallyChecked': false

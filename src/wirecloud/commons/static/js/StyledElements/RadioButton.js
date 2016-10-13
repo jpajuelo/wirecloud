@@ -27,7 +27,18 @@
     "use strict";
 
     /**
+     * Create a new instance of class `RadioButton`.
      *
+     * @name StyledElements.RadioButton
+     * @constructor
+     * @extends StyledElements.InputElement
+     * @since 0.5
+     *
+     * @param {Object} [options] The available options are:
+     * @param {String} [options.class=""]
+     * @param {Boolean} [options.initiallyChecked=false]
+     * @param {String} [options.value]
+     * @param {(StyledElement.ButtonsGroup|String)} [options.group]
      */
     var RadioButton = function RadioButton(options) {
         var defaultOptions = {

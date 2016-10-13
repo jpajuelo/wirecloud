@@ -89,9 +89,19 @@
     };
 
     /**
+     * Create a new instance of class `Button`.
      *
-     * Eventos que soporta este componente:
-     *      - click: evento lanzado cuando se pulsa el botón.
+     * @name StyledElements.Button
+     * @constructor
+     * @extends StyledElements.StyledElement
+     * @since 0.5
+     *
+     * @param {Object} [options] The available options are:
+     * @param {String} [options.text=""]
+     * @param {String} [options.class=""]
+     * @param {String} [options.title=""]
+     * @param {String} [options.state="default"]
+     * @param {String} [options.iconClass=""]
      */
     var Button = function Button(options) {
         options = utils.merge(utils.clone(defaults), options);

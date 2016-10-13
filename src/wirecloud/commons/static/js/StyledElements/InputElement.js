@@ -27,9 +27,16 @@
     "use strict";
 
     /**
-     * @interface
+     * Create a new instance of class `InputElement`.
+     *
      * @name StyledElements.InputElement
-     * @extends {StyledElements.StyledElement}
+     * @constructor
+     * @abstract
+     * @extends StyledElements.StyledElement
+     * @since 0.5
+     *
+     * @param {*} defaultValue
+     * @param {Array.<String>} [events=[]]
      */
     var InputElement = function InputElement(defaultValue, events) {
         this.inputElement = null;

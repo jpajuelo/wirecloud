@@ -27,14 +27,15 @@
     "use strict";
 
     /**
-     * Este compontente representa al contenedor para una alternativa usable por el
-     * componente Alternatives.
-     * @extends {Container}
+     * Create a new instance of class `Alternative`.
      *
-     * @param {Number} id
-     *      [TODO: description]
-     * @param {PlainObject} [options]
-     *      [TODO: description]
+     * @name StyledElements.Alternative
+     * @constructor
+     * @extends StyledElements.Container
+     * @since 0.5
+     *
+     * @param {String} id
+     * @param {Object} [options] The available options are:
      */
     var Alternative = function Alternative(id, options) {
 

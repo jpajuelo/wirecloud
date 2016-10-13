@@ -41,17 +41,15 @@
     /**
      * Create a new instance of class `Addon`.
      *
-     * Available options:
-     * - `text`: content to be displayed inside the Addon
-     * - `title`: content to be displayed on the tooltip associated with this
-     *   Addon
-     * - `class`: extra css classes to apply to this Addon.
-     *
+     * @name StyledElements.Addon
      * @constructor
      * @extends StyledElements.StyledElement
-     * @name StyledElements.Addon
      * @since 0.5
-     * @param {Object.<String, *>} options [description]
+     *
+     * @param {Object} [options] The available options are:
+     * @param {String} [options.class=""] Extra css classes to apply to this Addon.
+     * @param {String} [options.text=""] Content to be displayed inside the Addon.
+     * @param {String} [options.title=""] content to be displayed on the tooltip associated with this.
      */
     var Addon = function Addon(options) {
         var defaultOptions = {

@@ -34,6 +34,18 @@
         }
     };
 
+    /**
+     * Create a new instance of class `PopupButton`.
+     *
+     * @name StyledElements.PopupButton
+     * @constructor
+     * @extends StyledElements.Button
+     * @since 0.5
+     *
+     * @param {Object} [options] The available options are:
+     * @param {StyledElement.PopupMenu} [options.menu]
+     * @param {Object} [options.menuOptions]
+     */
     var PopupButton = function PopupButton(options) {
         var defaultOptions = {
             'menuOptions': null,

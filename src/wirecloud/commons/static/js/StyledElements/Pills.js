@@ -33,6 +33,17 @@
         this.switchPill(id);
     };
 
+    /**
+     * Create a new instance of class `Pills`.
+     *
+     * @name StyledElements.Pills
+     * @constructor
+     * @extends StyledElements.Container
+     * @since 0.5
+     *
+     * @param {Object} [options] The available options are:
+     * @param {String} [options.class=""]
+     */
     var Pills = function Pills(options) {
         var defaultOptions = {
             'class': ''

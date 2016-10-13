@@ -31,12 +31,19 @@
     // =========================================================================
 
     /**
-     * Create a new instance of class Alert.
+     * Create a new instance of class `Alert`.
      *
+     * @name StyledElements.Alert
      * @constructor
      * @extends StyledElements.StyledElement
      * @since 0.6
-     * @param {Object.<String, *>} [options] [description]
+     *
+     * @param {Object} [options] The available options are:
+     * @param {String} [options.class=""]
+     * @param {String} [options.state="default"]
+     * @param {String} [options.title=""]
+     * @param {String} [options.alignment=""]
+     * @param {String} [options.message=""]
      */
     se.Alert = utils.defineClass({
 

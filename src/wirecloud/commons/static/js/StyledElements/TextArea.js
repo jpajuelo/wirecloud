@@ -41,7 +41,16 @@
     };
 
     /**
-     * Styled Text Area.
+     * Create a new instance of class `TextArea`.
+     *
+     * @name StyledElements.TextArea
+     * @constructor
+     * @extends StyledElements.InputElement
+     * @since 0.5
+     *
+     * @param {Object} [options] The available options are:
+     * @param {String} [options.class=""]
+     * @param {String} [options.initialValue=""]
      */
     TextArea = function TextArea(options) {
         var defaultOptions = {

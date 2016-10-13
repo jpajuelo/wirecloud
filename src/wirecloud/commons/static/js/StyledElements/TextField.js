@@ -47,9 +47,17 @@
     };
 
     /**
-     * @constructor
+     * Create a new instance of class `TextField`.
+     *
      * @name StyledElements.TextField
+     * @constructor
      * @extends StyledElements.InputElement
+     * @since 0.5
+     *
+     * @param {Object} [options] The available options are:
+     * @param {String} [options.class=""]
+     * @param {String} [options.initialValue=""]
+     * @param {String} [options.placeholder=""]
      */
     TextField = function TextField(options) {
         var defaultOptions = {
